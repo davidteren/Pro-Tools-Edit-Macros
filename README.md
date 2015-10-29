@@ -5,4 +5,5 @@ Handy tool for dealing with those repetitive tasks.
 
 ### Usage ###
 
-* Run in Apple's Automator & tweak to taste.
+* Download, unzip & double-click "PT-Cut Breath.workflow" to install
+* In Apple Automator you can tweak to taste.
