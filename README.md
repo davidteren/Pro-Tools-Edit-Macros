@@ -30,9 +30,10 @@ Create the Automator Preset
 ---------------------------
  - Open the Automator App!
 
- ![](https://github.com/davidteren/Pro-Tools-Edit-Macros/blob/master/images/01.png)
+![](https://github.com/davidteren/Pro-Tools-Edit-Macros/blob/master/images/01.png)
 
- ![](https://github.com/davidteren/Pro-Tools-Edit-Macros/blob/master/images/02.png)
+![](https://github.com/davidteren/Pro-Tools-Edit-Macros/blob/master/images/02.png)
+
  - In the "Choose a type for your document" dialog pane select > Service & click the Choose button.
 
  ![](https://github.com/davidteren/Pro-Tools-Edit-Macros/blob/master/images/02b.png)
