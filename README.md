@@ -30,7 +30,7 @@ Create the Automator Preset
 ---------------------------
  - Open the Automator App
  
- ![tag](https://github.com/davidteren/Pro-Tools-Edit-Macros/blob/master/images/01.png)
+ ![](https://github.com/davidteren/Pro-Tools-Edit-Macros/blob/master/images/01.png)
  - In the "Choose a type for your document" dialog pane select > Service & click the Choose button.
  - In the search field type"apple" and select "AppleScript" when it appears
  - Drag & drop the selected AppleScript icon into windo pane on the right
