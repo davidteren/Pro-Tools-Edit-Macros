@@ -91,7 +91,7 @@ Using the service
 
   ![](https://github.com/davidteren/Pro-Tools-Edit-Macros/blob/master/images/14.png)
 
- - You can use your combo twice or more time in succession to make longer gaps shorter.
+ - You can use your key combo twice or more times in succession to make longer gaps shorter.
 
   ![](https://github.com/davidteren/Pro-Tools-Edit-Macros/blob/master/images/15.png)
 
