@@ -2,7 +2,7 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Pro Tools Edit Macros by davidteren</title>
+    <title>Pro-Tools-Edit-Macros: De-Breath by davidteren</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -11,7 +11,7 @@
   </head>
   <body>
     <section class="page-header">
-      <h1 class="project-name">Pro Tools Edit Macros</h1>
+      <h1 class="project-name">Pro-Tools-Edit-Macros: De-Breath</h1>
       <h2 class="project-tagline">Pro Tools De-Breath Editing macro via Automator (Mac OS X)</h2>
       <a href="https://github.com/davidteren/Pro-Tools-Edit-Macros" class="btn">View on GitHub</a>
       <a href="https://github.com/davidteren/Pro-Tools-Edit-Macros/zipball/master" class="btn">Download .zip</a>
@@ -23,18 +23,134 @@
 <a id="pro-tools---automator-editing-macro" class="anchor" href="#pro-tools---automator-editing-macro" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pro Tools - Automator Editing Macro</h1>
 
 <p>Pro Tools (De-Breath) Editing macro via Automator (Mac OS X)
-Handy tool for dealing with those repetitive tasks.</p>
+Handy tool for dealing with those repetitive tasks.
+This specific macro is handy for editing those nasty rushed radio commercials where the dialog is longer than the allocated flighting duration :)</p>
 
 <h3>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h3>
 
 <ul>
-<li>Download, unzip &amp; double-click "PT-Cut Breath.workflow" to install</li>
-<li>In Apple Automator you can tweak to taste.</li>
+<li>Copy the code below</li>
+</ul>
+
+<pre><code>## Cut a breath (Ctrl + Alt + C)
+tell application "Pro Tools First"
+  activate
+  tell application "System Events" to key code 120 -- F2 -&gt; Slip Mode
+  delay 0.09
+  tell application "System Events" to keystroke (ASCII character 127) -- Delete
+  delay 0.02
+  tell application "System Events" to keystroke (ASCII character 9) using {shift down} -- Shift + Tab 
+  delay 0.02
+  tell application "System Events" to keystroke "L" using {shift down, control down, option down, command down} -- Shift + Cntrl + Opt + Cmnd + L
+  delay 0.02
+  tell application "System Events" to key code 122 -- F1 -&gt; Shuffle Mode
+  delay 0.02
+  tell application "System Events" to keystroke (ASCII character 127) -- Delete
+  delay 0.02
+  tell application "System Events" to key code 120 -- F2 -&gt; Slip Mode
+end tell
+</code></pre>
+
+<h2>
+<a id="create-the-automator-preset" class="anchor" href="#create-the-automator-preset" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create the Automator Preset</h2>
+
+<ul>
+<li>
+<p>Open the Automator App!</p>
+
+<p><img src="https://github.com/davidteren/Pro-Tools-Edit-Macros/blob/master/images/01.png" alt=""></p>
+
+<p><img src="https://github.com/davidteren/Pro-Tools-Edit-Macros/blob/master/images/02.png" alt=""></p>
+</li>
+<li>
+<p>In the "Choose a type for your document" dialog pane select &gt; Service &amp; click the Choose button.</p>
+
+<p><img src="https://github.com/davidteren/Pro-Tools-Edit-Macros/blob/master/images/02b.png" alt=""></p>
+</li>
+<li>
+<p>In the search field type"apple" and select "AppleScript" when it appears</p>
+
+<p><img src="https://github.com/davidteren/Pro-Tools-Edit-Macros/blob/master/images/03.png" alt=""></p>
+</li>
+<li>
+<p>Drag &amp; drop the selected AppleScript icon into window pane on the right</p>
+
+<p><img src="https://github.com/davidteren/Pro-Tools-Edit-Macros/blob/master/images/04.png" alt=""></p>
+</li>
+<li>
+<p>Select the existing code &amp; replace it with the code we copied above these directions</p>
+
+<p><img src="https://github.com/davidteren/Pro-Tools-Edit-Macros/blob/master/images/05.png" alt=""></p>
+</li>
+<li>
+<p>Change the "Service receives" option to "no input"</p>
+
+<p><img src="https://github.com/davidteren/Pro-Tools-Edit-Macros/blob/master/images/06.png" alt=""></p>
+</li>
+<li>
+<p>Select "Other " in the next field &amp; then select your Pro Tools app</p>
+
+<p><img src="https://github.com/davidteren/Pro-Tools-Edit-Macros/blob/master/images/07.png" alt=""></p>
+</li>
+<li>
+<p>Save the service CMD + S giving it an appropriate name</p>
+
+<p><img src="https://github.com/davidteren/Pro-Tools-Edit-Macros/blob/master/images/09.png" alt=""></p>
+</li>
+<li><p>Close the Automator App</p></li>
+</ul>
+
+<h2>
+<a id="create-the-keyboard-shortcut" class="anchor" href="#create-the-keyboard-shortcut" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create the Keyboard Shortcut</h2>
+
+<ul>
+<li>In System Preferences got to Keyboard &gt; Shortcuts</li>
+<li>In the left pane select Services</li>
+<li>
+<p>In the right pane select your Automator service (probably at the bottom of the list)</p>
+
+<p><img src="https://github.com/davidteren/Pro-Tools-Edit-Macros/blob/master/images/10.png" alt=""></p>
+</li>
+<li>
+<p>Click the add shortcut button &amp; press the key combination you want to use. Be sure not to use a key combo that will conflict with your version of Pro Tools</p>
+
+<p><img src="https://github.com/davidteren/Pro-Tools-Edit-Macros/blob/master/images/11.png" alt=""></p>
+</li>
+<li>
+<p>Check that the service is available and the Keyboard shortcut is assigned in Pro Tools in the Service menu. If not restart Pro Tools</p>
+
+<p><img src="https://github.com/davidteren/Pro-Tools-Edit-Macros/blob/master/images/12.png" alt=""></p>
+</li>
+</ul>
+
+<h2>
+<a id="using-the-service" class="anchor" href="#using-the-service" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using the service</h2>
+
+<ul>
+<li>
+<p>Select the breath you want to delete &amp; the area you want to shorten</p>
+
+<p><img src="https://github.com/davidteren/Pro-Tools-Edit-Macros/blob/master/images/13.png" alt=""></p>
+</li>
+<li>
+<p>Use your key combo to run the service (Hint: Press &amp; release quickly)</p>
+
+<p><img src="https://github.com/davidteren/Pro-Tools-Edit-Macros/blob/master/images/14.png" alt=""></p>
+</li>
+<li>
+<p>You can use your key combo twice or more times in succession to make longer gaps shorter.</p>
+
+<p><img src="https://github.com/davidteren/Pro-Tools-Edit-Macros/blob/master/images/15.png" alt=""></p>
+
+<p><img src="https://github.com/davidteren/Pro-Tools-Edit-Macros/blob/master/images/16.png" alt=""></p>
+
+<p><img src="https://github.com/davidteren/Pro-Tools-Edit-Macros/blob/master/images/17.png" alt=""></p>
+</li>
 </ul>
 
       <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/davidteren/Pro-Tools-Edit-Macros">Pro-tools-edit-macros</a> is maintained by <a href="https://github.com/davidteren">davidteren</a>.</span>
+        <span class="site-footer-owner"><a href="https://github.com/davidteren/Pro-Tools-Edit-Macros">Pro-Tools-Edit-Macros: De-Breath</a> is maintained by <a href="https://github.com/davidteren">davidteren</a>.</span>
 
         <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
