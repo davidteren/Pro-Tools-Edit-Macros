@@ -8,7 +8,8 @@ This specific macro is handy for editing those nasty rushed radio commercials wh
 
  - Copy the code below
 
-```## Cut a breath (Ctrl + Alt + C)
+```
+## Cut a breath (Ctrl + Alt + C)
 tell application "Pro Tools First"
   activate
   tell application "System Events" to key code 120 -- F2 -> Slip Mode
@@ -24,7 +25,8 @@ tell application "Pro Tools First"
   tell application "System Events" to keystroke (ASCII character 127) -- Delete
   delay 0.02
   tell application "System Events" to key code 120 -- F2 -> Slip Mode
-end tell```
+end tell
+```
 
 Create the Automator Preset
 ---------------------------
